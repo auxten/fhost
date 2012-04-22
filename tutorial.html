@@ -47,14 +47,16 @@ subcommands:
 
 fhost's epilog</pre>
 </div>
-<p>Listing available hosts.</p>
-<div class="highlight-python"><pre>Listing (4) host(s):
+<p>Listing available Hosts.</p>
+<div class="highlight-python"><pre>$ fhost list
+
+Listing (4) host(s):
     127.0.0.1     -&gt; localhost
     127.0.1.1     -&gt; fhost.org
     192.168.56.101        -&gt; fhost.org
     192.168.56.102        -&gt; subcmd.org</pre>
 </div>
-<p>Adding a new host.</p>
+<p>Adding a new Host.</p>
 <div class="highlight-python"><pre>$ sudo fhost add 192.168.56.103 fake-host.com fake-host
 
 fhost list
@@ -66,7 +68,7 @@ Listing (5) host(s):
     192.168.56.102        -&gt; subcmd.org
     192.168.56.103        -&gt; fake-host.com</pre>
 </div>
-<p>Remove a host.</p>
+<p>Removing a Host.</p>
 <div class="highlight-python"><pre>$ sudo fhost remove fake-host.com
 
 Listing (4) host(s):

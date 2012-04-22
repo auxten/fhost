@@ -31,8 +31,7 @@
 <dt id="fhost.cli.Application">
 <em class="property">class </em><tt class="descclassname">fhost.cli.</tt><tt class="descname">Application</tt><big>(</big><em>name=None</em>, <em>description=None</em>, <em>version=None</em>, <em>epilog=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fhost.cli.Application" title="Permalink to this definition">¶</a></dt>
 <dd><p>fhost entry tool class.</p>
-<blockquote>
-<div><p>Implements a command-subcommand pattern wich is 
+<p>Implements a command-subcommand pattern wich is
 used as a main entry point of this tool.</p>
 <p>A very basic <abbr title="Create, Read, Update and Delete">CRUD</abbr> is provided
 specifically create, list and remove commands to manage hosts.</p>
@@ -54,7 +53,6 @@ subcommands:
     import              Import hosts from a backup
     list                List available hosts</pre>
 </div>
-</div></blockquote>
 <p>The above message shows the usage message help that <strong>fhost</strong> prints if
 no command is executed.</p>
 <dl class="attribute">
@@ -138,10 +136,10 @@ no command is executed.</p>
 inherits from this one.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
-        <span class="o">...</span>
+    <span class="o">...</span>
 <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s">&quot;base exception raised!&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s">&quot;base exception raised!&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -150,17 +148,18 @@ inherits from this one.</p>
 <dt id="fhost.exceptions.InvalidHostnameException">
 <em class="property">exception </em><tt class="descclassname">fhost.exceptions.</tt><tt class="descname">InvalidHostnameException</tt><a class="headerlink" href="#fhost.exceptions.InvalidHostnameException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invalid Hostname</p>
-<p>This exception is raised when some part of <strong>fhost</strong> code validates a 
+<p>This exception is raised when some part of <strong>fhost</strong> code validates a
 hostname format.</p>
-<p>As /etc/hosts file is quite delicated beacuse it can affect the whole system,
-<strong>fhost</strong> performs aggressive validations on all input and output data.</p>
+<p>As /etc/hosts file is quite delicated beacuse it can affect the whole
+system, <strong>fhost</strong> performs aggressive validations on all input and
+output data.</p>
 <p>A common string message is shown to the user if this exeption raises.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
-        <span class="o">...</span>
+    <span class="o">...</span>
 <span class="k">except</span> <span class="n">InvalidHostnameException</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">InvalidHostnameException</span><span class="p">(</span><span class="s">&quot;invalid hostname exception raised!&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">InvalidHostnameException</span><span class="p">(</span><span class="s">&quot;invalid hostname exception raised&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -169,17 +168,18 @@ hostname format.</p>
 <dt id="fhost.exceptions.InvalidIPException">
 <em class="property">exception </em><tt class="descclassname">fhost.exceptions.</tt><tt class="descname">InvalidIPException</tt><a class="headerlink" href="#fhost.exceptions.InvalidIPException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invalid IP</p>
-<p>This exception is raised when some part of <strong>fhost</strong> code validates an 
+<p>This exception is raised when some part of <strong>fhost</strong> code validates an
 IP address format.</p>
-<p>As /etc/hosts file is quite delicated beacuse it can affect the whole system,
-<strong>fhost</strong> performs aggressive validations on all input and output data.</p>
+<p>As /etc/hosts file is quite delicated beacuse it can affect the whole
+system, <strong>fhost</strong> performs aggressive validations on all input and
+output data.</p>
 <p>A common string message is shown to the user if this exeption raises.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
-        <span class="o">...</span>
+    <span class="o">...</span>
 <span class="k">except</span> <span class="n">InvalidIPException</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">InvalidIPException</span><span class="p">(</span><span class="s">&quot;invalid ip exception raised!&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">InvalidIPException</span><span class="p">(</span><span class="s">&quot;invalid ip exception raised!&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -192,11 +192,11 @@ IP address format.</p>
 <em class="property">class </em><tt class="descclassname">fhost.hosts.</tt><tt class="descname">Hosts</tt><a class="headerlink" href="#fhost.hosts.Hosts" title="Permalink to this definition">¶</a></dt>
 <dd><p>A collection of Hosts</p>
 <p>This is a collection of Hosts implemented as a Python container.
-It is iterable and have CRUD methods helpers to maintain a 
+It is iterable and have CRUD methods helpers to maintain a
 registry of available Hosts during <strong>fhost</strong> process execution.</p>
-<p>It also have hardcoded the common path where /etc/hosts file is 
+<p>It also have hardcoded the common path where /etc/hosts file is
 located.</p>
-<p>In the future discover code will be implemented, both to detect 
+<p>In the future discover code will be implemented, both to detect
 the OS and its version and /etc/hosts location.</p>
 <dl class="method">
 <dt id="fhost.hosts.Hosts.add">
@@ -210,8 +210,8 @@ the OS and its version and /etc/hosts location.</p>
 <li>Aliases to the main hostname</li>
 </ul>
 </div></blockquote>
-<p>At this moment multiple aliases are accepted and inserted but only one is 
-used and saved back.</p>
+<p>At this moment multiple aliases are accepted and inserted but
+only one is used and saved back.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -254,9 +254,9 @@ used and saved back.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">hostname</span> <span class="o">=</span> <span class="s">&quot;example.com&quot;</span>
 <span class="k">if</span> <span class="n">isValidHostName</span><span class="p">(</span><span class="n">hostname</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&quot;Valid Hostname!&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Valid Hostname!&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;Invalid Hostname&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Invalid Hostname&quot;</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -276,9 +276,9 @@ used and saved back.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">hostname</span> <span class="o">=</span> <span class="s">&quot;173.194.34.208&quot;</span>
 <span class="k">if</span> <span class="n">isValidIP</span><span class="p">(</span><span class="n">hostname</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&quot;Valid IP!&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Valid IP!&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;Invalid IP&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Invalid IP&quot;</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
