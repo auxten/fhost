@@ -14,11 +14,11 @@
         <!-- Title -->
         <title>Tutorial</title>
         <!-- Linktags -->
-        <link rel="shortcut icon" href="static/subcmd.ico">
+        <link rel="shortcut icon" href="static/fhost.ico">
         <!-- Stylesheets -->
         <link href="static/bootstrap.css" rel="stylesheet">
         <link href="static/pygments.css" rel="stylesheet">
-        <link href="static/subcmd.css" rel="stylesheet">
+        <link href="static/fhost.css" rel="stylesheet">
         <!-- Headextra -->
     </head>
     <body>
@@ -47,6 +47,34 @@ subcommands:
 
 fhost's epilog</pre>
 </div>
+<p>Listing available hosts.</p>
+<div class="highlight-python"><pre>Listing (4) host(s):
+    127.0.0.1     -&gt; localhost
+    127.0.1.1     -&gt; fhost.org
+    192.168.56.101        -&gt; fhost.org
+    192.168.56.102        -&gt; subcmd.org</pre>
+</div>
+<p>Adding a new host.</p>
+<div class="highlight-python"><pre>$ sudo fhost add 192.168.56.103 fake-host.com fake-host
+
+fhost list
+
+Listing (5) host(s):
+    127.0.0.1     -&gt; localhost
+    127.0.1.1     -&gt; fhost.org
+    192.168.56.101        -&gt; fhost.org
+    192.168.56.102        -&gt; subcmd.org
+    192.168.56.103        -&gt; fake-host.com</pre>
+</div>
+<p>Remove a host.</p>
+<div class="highlight-python"><pre>$ sudo fhost remove fake-host.com
+
+Listing (4) host(s):
+    127.0.0.1     -&gt; localhost
+    127.0.1.1     -&gt; fhost.org
+    192.168.56.101        -&gt; fhost.org
+    192.168.56.102        -&gt; subcmd.org</pre>
+</div>
 </div>
 
         </div>
@@ -60,7 +88,7 @@ fhost's epilog</pre>
         <script src="static/bootstrap.js"></script>
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/subcmd.js"></script>
+        <script src="static/fhost.js"></script>
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
                 url_root: ''

@@ -14,17 +14,284 @@
         <!-- Title -->
         <title>API Documentation</title>
         <!-- Linktags -->
-        <link rel="shortcut icon" href="static/subcmd.ico">
+        <link rel="shortcut icon" href="static/fhost.ico">
         <!-- Stylesheets -->
         <link href="static/bootstrap.css" rel="stylesheet">
         <link href="static/pygments.css" rel="stylesheet">
-        <link href="static/subcmd.css" rel="stylesheet">
+        <link href="static/fhost.css" rel="stylesheet">
         <!-- Headextra -->
     </head>
     <body>
         <div class="container">
     <div class="section" id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-fhost.cli">
+<span id="fhost-cli"></span><h2>fhost.cli<a class="headerlink" href="#module-fhost.cli" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="fhost.cli.Application">
+<em class="property">class </em><tt class="descclassname">fhost.cli.</tt><tt class="descname">Application</tt><big>(</big><em>name=None</em>, <em>description=None</em>, <em>version=None</em>, <em>epilog=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fhost.cli.Application" title="Permalink to this definition">¶</a></dt>
+<dd><p>fhost entry tool class.</p>
+<blockquote>
+<div><p>Implements a command-subcommand pattern wich is 
+used as a main entry point of this tool.</p>
+<p>A very basic <abbr title="Create, Read, Update and Delete">CRUD</abbr> is provided
+specifically create, list and remove commands to manage hosts.</p>
+<p>Example:</p>
+<div class="highlight-python"><pre>usage: fhost [-h] [-v] {import,add,export,list,delete} ...
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version
+
+subcommands:
+  valid subcommands
+
+  {import,add,export,list,delete}
+                        additional help
+    add                 Add new host
+    delete              Delete existing hostname
+    export              Export hosts as a backup
+    import              Import hosts from a backup
+    list                List available hosts</pre>
+</div>
+</div></blockquote>
+<p>The above message shows the usage message help that <strong>fhost</strong> prints if
+no command is executed.</p>
+<dl class="attribute">
+<dt id="fhost.cli.Application.description">
+<tt class="descname">description</tt><em class="property"> = 'Create, list, and modify local hostnames.'</em><a class="headerlink" href="#fhost.cli.Application.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="fhost.cli.Application.do_add">
+<tt class="descname">do_add</tt><big>(</big><em>options</em><big>)</big><a class="headerlink" href="#fhost.cli.Application.do_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new host command.</p>
+<p>Each host is composed of three parts:</p>
+<blockquote>
+<div><ul class="simple">
+<li>IP name</li>
+<li>Main hostname</li>
+<li>An alias to the main hostname.</li>
+</ul>
+</div></blockquote>
+<p>Both three arguments are requied.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fhost.cli.Application.do_delete">
+<tt class="descname">do_delete</tt><big>(</big><em>options</em><big>)</big><a class="headerlink" href="#fhost.cli.Application.do_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete existing hostname.</p>
+<p>A valid hostname must be passed, no IP or alias are valid arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fhost.cli.Application.do_list">
+<tt class="descname">do_list</tt><big>(</big><em>options</em><big>)</big><a class="headerlink" href="#fhost.cli.Application.do_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available hosts command.</p>
+<p>No argument is required for this too.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">list - A list of triplets ( ip, host, alias) hostnames.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fhost.cli.Application.name">
+<tt class="descname">name</tt><em class="property"> = 'fhost'</em><a class="headerlink" href="#fhost.cli.Application.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="fhost.cli.Application.version">
+<tt class="descname">version</tt><em class="property"> = '0.2'</em><a class="headerlink" href="#fhost.cli.Application.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fhost.exceptions">
+<span id="fhost-exceptions"></span><h2>fhost.exceptions<a class="headerlink" href="#module-fhost.exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="fhost.exceptions.BaseException">
+<em class="property">exception </em><tt class="descclassname">fhost.exceptions.</tt><tt class="descname">BaseException</tt><a class="headerlink" href="#fhost.exceptions.BaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Exception</p>
+<p>This is the base exception. All other exceptions from <strong>fhost</strong> module
+inherits from this one.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="o">...</span>
+<span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s">&quot;base exception raised!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="exception">
+<dt id="fhost.exceptions.InvalidHostnameException">
+<em class="property">exception </em><tt class="descclassname">fhost.exceptions.</tt><tt class="descname">InvalidHostnameException</tt><a class="headerlink" href="#fhost.exceptions.InvalidHostnameException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalid Hostname</p>
+<p>This exception is raised when some part of <strong>fhost</strong> code validates a 
+hostname format.</p>
+<p>As /etc/hosts file is quite delicated beacuse it can affect the whole system,
+<strong>fhost</strong> performs aggressive validations on all input and output data.</p>
+<p>A common string message is shown to the user if this exeption raises.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="o">...</span>
+<span class="k">except</span> <span class="n">InvalidHostnameException</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidHostnameException</span><span class="p">(</span><span class="s">&quot;invalid hostname exception raised!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="exception">
+<dt id="fhost.exceptions.InvalidIPException">
+<em class="property">exception </em><tt class="descclassname">fhost.exceptions.</tt><tt class="descname">InvalidIPException</tt><a class="headerlink" href="#fhost.exceptions.InvalidIPException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalid IP</p>
+<p>This exception is raised when some part of <strong>fhost</strong> code validates an 
+IP address format.</p>
+<p>As /etc/hosts file is quite delicated beacuse it can affect the whole system,
+<strong>fhost</strong> performs aggressive validations on all input and output data.</p>
+<p>A common string message is shown to the user if this exeption raises.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="o">...</span>
+<span class="k">except</span> <span class="n">InvalidIPException</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidIPException</span><span class="p">(</span><span class="s">&quot;invalid ip exception raised!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fhost.hosts">
+<span id="fhost-hosts"></span><h2>fhost.hosts<a class="headerlink" href="#module-fhost.hosts" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="fhost.hosts.Hosts">
+<em class="property">class </em><tt class="descclassname">fhost.hosts.</tt><tt class="descname">Hosts</tt><a class="headerlink" href="#fhost.hosts.Hosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collection of Hosts</p>
+<p>This is a collection of Hosts implemented as a Python container.
+It is iterable and have CRUD methods helpers to maintain a 
+registry of available Hosts during <strong>fhost</strong> process execution.</p>
+<p>It also have hardcoded the common path where /etc/hosts file is 
+located.</p>
+<p>In the future discover code will be implemented, both to detect 
+the OS and its version and /etc/hosts location.</p>
+<dl class="method">
+<dt id="fhost.hosts.Hosts.add">
+<tt class="descname">add</tt><big>(</big><em>ip_address</em>, <em>canonical_hostname</em>, <em>*args</em><big>)</big><a class="headerlink" href="#fhost.hosts.Hosts.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new hostname to the container.</p>
+<p>Each host is composed by:</p>
+<blockquote>
+<div><ul class="simple">
+<li>IP address</li>
+<li>Main hostname</li>
+<li>Aliases to the main hostname</li>
+</ul>
+</div></blockquote>
+<p>At this moment multiple aliases are accepted and inserted but only one is 
+used and saved back.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fhost.hosts.Hosts.delete">
+<tt class="descname">delete</tt><big>(</big><em>canonical_hostname</em><big>)</big><a class="headerlink" href="#fhost.hosts.Hosts.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete existing hostname.</p>
+<p>A valid hostname must be passed, no IP or alias are valid arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fhost.hosts.Hosts.hosts_file">
+<tt class="descname">hosts_file</tt><em class="property"> = '/etc/hosts'</em><a class="headerlink" href="#fhost.hosts.Hosts.hosts_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fhost.utils">
+<span id="fhost-utils"></span><h2>fhost.utils<a class="headerlink" href="#module-fhost.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="fhost.utils.isValidHostname">
+<tt class="descclassname">fhost.utils.</tt><tt class="descname">isValidHostname</tt><big>(</big><em>hostname</em><big>)</big><a class="headerlink" href="#fhost.utils.isValidHostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a valid hostname</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">hostname</span> <span class="o">=</span> <span class="s">&quot;example.com&quot;</span>
+<span class="k">if</span> <span class="n">isValidHostName</span><span class="p">(</span><span class="n">hostname</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;Valid Hostname!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Invalid Hostname&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">Boolean value that indicates if the hostname is valid.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fhost.utils.isValidIP">
+<tt class="descclassname">fhost.utils.</tt><tt class="descname">isValidIP</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#fhost.utils.isValidIP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a valid IP</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">hostname</span> <span class="o">=</span> <span class="s">&quot;173.194.34.208&quot;</span>
+<span class="k">if</span> <span class="n">isValidIP</span><span class="p">(</span><span class="n">hostname</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;Valid IP!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Invalid IP&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Results :</th><td class="field-body">Boolean value that indicates if the IP address is valid.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
         </div>
@@ -38,7 +305,7 @@
         <script src="static/bootstrap.js"></script>
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/subcmd.js"></script>
+        <script src="static/fhost.js"></script>
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
                 url_root: ''
